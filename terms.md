@@ -20,5 +20,9 @@ For payments, disputes, and general help use `/support`.
 6. Limitation of liability
 The bot and answers are provided “as is”. We are not liable for losses or decisions based on bot replies, or for third-party services (Telegram, AI providers).
 
-7. Changes
+7. Anonymized data and third parties
+By using the bot, you agree to the collection, processing, and transfer of anonymized data arising from your use of the bot (including the content of requests and answers, technical metadata, and usage statistics) to third parties — in particular Telegram operators and hosting and artificial intelligence service providers — to the extent necessary to provide the service, keep the bot working, and develop it.
+Anonymized data means information that by itself does not identify you without additional information.
+
+8. Changes
 Terms may be updated. The current version is available via `/terms`. Continued use after changes means you accept the new version.
