@@ -113,6 +113,7 @@ See [`env.example`](env.example). Main ones:
 | `WEBHOOK_PORT` | HTTP port inside the container |
 | `AI_PROVIDER` | `openai` \| `anthropic` |
 | `MODEL` | Provider model id |
+| `REASONING_EFFORT` | OpenAI reasoning: `low` (default), `medium`, or `high` |
 | `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | API keys |
 | `DB_PASSWORD` | Postgres password (**required**, no default) |
 | `DATABASE_URL` | Connection string |
