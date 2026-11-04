@@ -11,7 +11,9 @@ async function bootstrap(): Promise<void> {
   await runMigrations();
 
   const webhookUrl = `${config.bot.webhookDomain}/webhook`;
-  await bot.api.setWebhook(webhookUrl);
+  await bot.api.setWebhook(webhookUrl, {
+    secret_token: config.bot.webhookSecretToken,
+  });
   console.log(`✅ Webhook: ${webhookUrl}`);
 
   const server = http.createServer(async (req, res) => {
