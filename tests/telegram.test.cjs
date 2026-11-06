@@ -88,7 +88,7 @@ async function runHandler({ aiFails = false, sendFails = false } = {}) {
     await handleMessage({
       from: { id: 1 }, chat: { id: -123 },
       message: {
-        message_id: 20, text: 'капитан объясни',
+        message_id: 20, text: 'captain explain',
         reply_to_message: { message_id: 10, text: 'PRIVATE INPUT' },
       },
       reply: async (...args) => {
@@ -119,7 +119,7 @@ test('successful answer logs time and chat id without message text', async () =>
 test('send failure is logged as Telegram error, without another reply or AI call', async () => {
   const result = await runHandler({ sendFails: true });
   assert.equal(result.errors.length, 1);
-  assert.equal(result.errors[0][0], 'Ошибка отправки в Telegram:');
+  assert.equal(result.errors[0][0], 'Telegram send error:');
   assert.equal(result.logs.length, 0);
   assert.equal(result.replies.length, 1);
   assert.equal(result.charged, 1);
@@ -128,7 +128,7 @@ test('send failure is logged as Telegram error, without another reply or AI call
 test('AI failure and failure to send its notification are logged separately', async () => {
   const result = await runHandler({ aiFails: true, sendFails: true });
   assert.deepEqual(result.errors.map(([label]) => label), [
-    'Ошибка AI:', 'Ошибка отправки в Telegram:',
+    'AI error:', 'Telegram send error:',
   ]);
   assert.equal(result.logs.length, 0);
   assert.equal(result.charged, 0);

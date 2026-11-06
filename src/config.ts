@@ -25,7 +25,7 @@ function parsePositiveInt(key: string, def: string, min: number): number {
 function parseReasoningEffort(): 'low' | 'medium' | 'high' {
   const value = optional('REASONING_EFFORT', 'low');
   if (value !== 'low' && value !== 'medium' && value !== 'high') {
-    throw new Error('REASONING_EFFORT должен быть low, medium или high');
+    throw new Error('REASONING_EFFORT must be low, medium, or high');
   }
   return value;
 }

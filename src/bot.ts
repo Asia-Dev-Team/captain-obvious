@@ -34,7 +34,7 @@ bot.api.config.use(async (prev, method, payload, signal) => {
   }
 });
 
-/** Deep link `t.me/bot?start=terms` → в чат приходит `/start terms`. */
+/** Deep link `t.me/bot?start=terms` → chat receives `/start terms`. */
 function startPayload(ctx: Context): string {
   const t = ctx.message?.text?.trim() ?? '';
   const m = t.match(/^\/start(?:@[\w]+)?(?:\s+(\S+))?/i);
@@ -66,11 +66,11 @@ bot.command('support', handleSupportCommand);
 bot.on('message', handleMessage);
 
 bot.catch((err) => {
-  console.error('Ошибка бота:', err);
+  console.error('Bot error:', err);
 });
 
 export const handleUpdate = webhookCallback(bot, 'http', {
   secretToken: config.bot.webhookSecretToken,
-  onTimeout: () => console.warn('Webhook: update > 20 с, задание сброшено'),
+  onTimeout: () => console.warn('Webhook: update > 20s, job dropped'),
   timeoutMilliseconds: 20_000,
 });

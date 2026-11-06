@@ -111,6 +111,7 @@ See [`env.example`](env.example). Main ones:
 | `BOT_USERNAME` | Username without `@` (terms links) |
 | `WEBHOOK_DOMAIN` | `https://your-domain.com` (no `/webhook` suffix) |
 | `WEBHOOK_PORT` | HTTP port inside the container |
+| `WEBHOOK_SECRET_TOKEN` | **Required.** Secret sent by Telegram in `X-Telegram-Bot-Api-Secret-Token`; updates without it are rejected. Generate with `openssl rand -hex 32` |
 | `AI_PROVIDER` | `openai` \| `anthropic` |
 | `MODEL` | Provider model id |
 | `REASONING_EFFORT` | OpenAI reasoning: `low` (default), `medium`, or `high` |
